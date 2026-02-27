@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin Panel</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Admin Panel - Emerging Sciences</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #00c6ff;
+      border: none;
+      cursor: pointer;
+    }
+    #panel {
+      display: none;
+      margin-top: 30px;
+    }
+  </style>
 </head>
-<body class="bg-black text-white text-center">
+<body>
 
-  <div class="py-10">
-    <h1 class="text-4xl text-blue-500">Admin Upload Panel</h1>
-  </div>
+<h1>Admin Login</h1>
 
-  <div class="max-w-md mx-auto space-y-6">
+<input type="password" id="pass" placeholder="Enter Admin Password">
+<button onclick="check()">Login</button>
 
-    <input id="pdfName" type="text" placeholder="PDF Title" class="w-full p-2 text-black">
-    <input id="pdfLink" type="text" placeholder="Cloudinary PDF Link" class="w-full p-2 text-black">
-    <button onclick="addPDF()" class="bg-blue-600 px-6 py-2 rounded">Add PDF</button>
-
-    <input id="videoName" type="text" placeholder="Video Title" class="w-full p-2 text-black">
-    <input id="videoLink" type="text" placeholder="Cloudinary Video Link" class="w-full p-2 text-black">
-    <button onclick="addVideo()" class="bg-blue-600 px-6 py-2 rounded">Add Video</button>
-
-  </div>
+<div id="panel">
+  <h2>Welcome Admin</h2>
+  <p>Upload your PDFs and Videos here.</p>
+</div>
 
 <script>
-function addPDF(){
-  alert("PDF added manually in code for now.");
-}
-
-function addVideo(){
-  alert("Video added manually in code for now.");
+function check() {
+  var password = document.getElementById("pass").value;
+  if(password === "12345") {
+    document.getElementById("panel").style.display = "block";
+  } else {
+    alert("Wrong Password!");
+  }
 }
 </script>
 
